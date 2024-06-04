@@ -9,14 +9,14 @@ const todoRoutes = require('./routes/api/v1/submissionRoutes');
  * @param {*} options 
  */
 async function app(fastify, options) {
-    fastify.register(require('@fastify/cors'));
-    fastify.register(repopsitoryPlugin);
-    fastify.register(servicePlugin);
+    await fastify.register(require('@fastify/cors'));
+    await fastify.register(repopsitoryPlugin);
+    await fastify.register(servicePlugin);
 
-    fastify.register(todoRoutes, {prefix: '/todos'});
+    await fastify.register(todoRoutes, {prefix: '/todos'});
 
     // register test routes
-    fastify.register(require('./routes/api/apiRoutes'), {prefix: '/api'});
+    await fastify.register(require('./routes/api/apiRoutes'), {prefix: '/api'});
 
 
 }
