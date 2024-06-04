@@ -11,8 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "@fastify/cors": "^9.0.1",
+    "bullmq": "^5.7.14",
     "dotenv": "^16.4.5",
     "fastify": "^4.27.0",
-    "fastify-plugin": "^4.5.1"
+    "fastify-plugin": "^4.5.1",
+    "ioredis": "^5.4.1",
+    "mongoose": "^8.4.1"
   }
 }
