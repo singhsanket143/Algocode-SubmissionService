@@ -14,6 +14,7 @@ class SubmissionService {
     async addSubmission(submissionPayload) {
         // Hit the problem admin service and fetch the problem details
         const problemId = submissionPayload.problemId;
+        const userId = submissionPayload.userId;
 
         const problemAdminApiResponse = await fetchProblemDetails(problemId);
 
@@ -40,8 +41,13 @@ class SubmissionService {
                 language: submission.language,
                 inputCase: problemAdminApiResponse.data.testCases[0].input,
                 outputCase: problemAdminApiResponse.data.testCases[0].output,
+                userId,
+                submissionId: submission._id
+
             }
         });
+
+        // TODO: Add handling of all testcases here .
         return {queueResponse: response, submission};
     }
 }
