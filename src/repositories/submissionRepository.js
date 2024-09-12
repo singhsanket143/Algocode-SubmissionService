@@ -10,6 +10,7 @@ class SubmissionRepository {
         const response = await this.submissionModel.create(submission);
         return response;
     }
+    
 }
 
 module.exports = SubmissionRepository;
