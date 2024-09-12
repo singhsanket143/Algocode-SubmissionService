@@ -14,7 +14,7 @@ const evaluationWorker = require('./workers/evaluationWorker');
 fastify.register(app);
 fastify.setErrorHandler(errorHandler);
 
-fastify.listen({ port: serverConfig.PORT }, async (err) => {
+fastify.listen({ port: serverConfig.PORT, host: '0.0.0.0' }, async (err) => {
     if (err) {
       fastify.log.error(err);
       process.exit(1)
